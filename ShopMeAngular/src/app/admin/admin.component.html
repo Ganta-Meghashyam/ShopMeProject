@@ -1,0 +1,47 @@
+<div class="center">
+  <div class="d-flex flex-column justify-content-center align-items-center h-100 overflow-auto">
+  
+   
+      <div class="card-body">
+        <div class="container">
+          <form class="form-horizontal row" role="form" #productregForm="ngForm" (ngSubmit)="OnSubmit(productregForm.value)">
+            <h2 class="text-center col-md-12">Product Details</h2><br/>
+            <div class="form-group col-md-6">
+              <label for="bookName" class="col-sm-12 control-label">Product Name </label>
+              <div class="col-sm-12">
+                <input type="text" name="productName" #bookName="ngModel" placeholder="product Name" class="form-control" autofocus ngModel>
+              </div><br/>
+            </div>
+  
+            <div class="form-group col-md-6">
+              <label for="price" class="col-sm-12 control-label">Price</label>
+              <div class="col-sm-12">
+                <input type="number" name="price" #pice="ngModel" ngModel placeholder="Price"
+                  class="form-control">
+              </div>
+            </div>
+  
+            <div class="form-group col-md-6">
+              <label for="availability" class="col-sm-12 control-label">Availability</label>
+              <div class="col-sm-12">
+                <select for="availability" name="availability" class="col-sm-12 control-label" ngModel>Availability
+                  <option value="inStock ">InStock </option>
+                  <option value="outOfStock ">OutOfStock </option>
+                </select>
+              </div>
+            </div>
+  
+            <div class="form-group col-md-6">
+              <label for="Image" class="col-sm-12 control-label">Upload Image</label>&nbsp;
+              <img [src]="imageUrl" style="width:275px;height:250px">
+              <input type="file" #Image name="Image" accept="image/*" (change)="handleFileInput($event.target.files)" ngModel>
+            </div>
+            <div class="d-flex justify-content-center col-md-12">
+              <button type="submit" class="btn btn-primary btn-block col-md-6">AddProduct</button>
+            </div>
+          </form> 
+        </div>
+      </div>
+    </div>
+  
+  </div>
