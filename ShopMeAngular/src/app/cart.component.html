@@ -1,0 +1,12 @@
+<div class="card mt-5 ml-5 mb-4 mr-4">
+    <h3 class="card-header"> Shopping cart</h3>
+    <div class="card-body">
+        <app-order [order]="order" (changeQuantity)="updatePrices()" *ngFor="let order of cartData"></app-order>
+    </div>
+
+    <div class="modal-footer">
+        <h4 class=" mt-2">Total Price:₹{{totalPrice}}</h4>
+    </div>
+    <button class="btn btn-sm btn-primary mt-2" (click)="gotoPurchasePage()">Place Order</button>
+
+</div>
