@@ -1,0 +1,75 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+    type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+<div class="testbox" >
+
+    <form #RegistrationForm="ngForm" (ngSubmit)=" submitRegistrationForm(RegistrationForm.value)">
+
+        <br/>
+        <!-- UserName -->
+        <label id="icon" for="name"> <i class="icon-user"> </i> </label>
+        <input type="text" name="customerName" id="name" placeholder="Name" #Name="ngModel" ngModel required /><br />
+
+        <!-- Email -->
+        <label id="icon" for="name"> <i class="icon-envelope "> </i> </label>
+        <input type="text" name="emailId" id="EmailId" placeholder="EmailId" #EmailId="ngModel" ngModel
+            required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" [class.is-invalid]="EmailId.invalid && EmailId.touched "/><br />
+        <div *ngIf="EmailId.errors && (EmailId.invalid && EmailId.touched)">
+            <small class="text-danger" *ngIf="EmailId.errors.required">Email Id is required field</small>
+            <small class="text-danger" *ngIf="EmailId.errors.pattern">Enter the valid Email Id</small>
+        </div>
+
+        <!-- Shipping Address -->
+        <label id="icon" for="name"> <i class="glyphicon glyphicon-home"> </i> </label>
+        <input type="text" name="shippingAddress" id="shippingAdddress" placeholder="shippingAddress"
+            #shippingAddress="ngModel" ngModel required [class.is-invalid]="shippingAddress.invalid && shippingAddress.touched "/><br />
+        <div *ngIf="shippingAddress.errors && (shippingAddress.invalid )">
+            <small class="text-danger" [class.d-none]="shippingAddress.valid  || shippingAddress.untouched">shipping Address is
+                  a required field</small>
+        </div>
+
+        <!-- Billing Address -->
+        <label id="icon" for="name"> <i class="glyphicon glyphicon-home"> </i> </label>
+        <input type="text" name="billingAddress" id="billingAddress" placeholder="billingingAddress"
+            #billingAddress="ngModel" ngModel required [class.is-invalid]="billingAddress.invalid && billingAddress.touched "/><br />
+        <div *ngIf="billingAddress.errors && (billingAddress.invalid )">
+            <small class="text-danger" [class.d-none]="billingAddress.valid  || billingAddress.untouched">Billing Address is
+                  a required field</small>
+        </div>
+
+        <!-- PhoneNumber -->
+        <label id="icon" for="name"> <i class="icon-phone"> </i> </label>
+        <input type="text" name="phoneNumber" id="PhoneNumber" placeholder="PhoneNumber" #PhoneNumber="ngModel" ngModel
+            required pattern="^((\\+91-?)|0)?[0-9]{10}$"
+            [class.is-invalid]="PhoneNumber.invalid && PhoneNumber.touched "><br/>
+        <div *ngIf="PhoneNumber.errors && (PhoneNumber.invalid )">
+            <small class="text-danger" [class.d-none]="PhoneNumber.valid  || PhoneNumber.untouched">Enter correct Phone Number</small>
+        </div>
+
+        <!-- UserName -->
+        <label id="icon" for="name"> <i class="icon-user "> </i> </label>
+        <input type="text" name="userName" id="Username" placeholder="Username" #Username="ngModel" ngModel
+            required [class.is-invalid]="Username.invalid && Username.touched "/><br />
+        <div *ngIf="Username.errors && (Username.invalid )">
+            <small class="text-danger" [class.d-none]="Username.valid  || Username.untouched">User Name is a required field</small>
+        </div>
+
+        <!-- Password   -->
+        <label id="icon" for="name"> <i class="icon-shield"> </i> </label>
+        <input type="password" name="password" id="Password" placeholder="Password" #Password="ngModel" ngModel
+            required minlength="6" [class.is-invalid]="Password.invalid && Password.touched "/><br />
+        <div *ngIf="Password.errors && (Password.invalid )">
+            <small class="text-danger" [class.d-none]="Password.valid  || Password.untouched">Password is a 
+                required field provide with minimum length 6</small>
+        </div>
+
+        By clicking Register, you agree on our <a href="#">terms and condition</a>.<br />
+        <div class="text-center">
+            <button [disabled]="RegistrationForm.form.invalid" (click)="registrationSubmit()" 
+            class="btn btn-primary" align="center">Register</button><br /><br />
+            <a [routerLink]="[ '/', 'login' ]" routerLinkActive="active"><button class="btn btn-primary " >Existing User?
+                Login</button></a>
+        </div>
+    </form><br />
+</div>

@@ -1,0 +1,12 @@
+
+
+.container > div { 
+    text-align: center; 
+    padding: 20px 0;
+    font-size: 15px;   
+ }
+
+ .box:hover{
+    transform: scale(1.5);
+    z-index: 1;
+}

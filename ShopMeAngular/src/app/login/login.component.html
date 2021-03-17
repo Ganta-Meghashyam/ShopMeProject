@@ -1,0 +1,26 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+        type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<div class="testbox">
+    <form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm.value)"  novalidate>
+        <label id="icon" for="name"><i class="icon-envelope "></i></label>
+        <input type="text" name="userName"  placeholder="userName" #loginId="ngModel" ngModel required minlength="4" /> <br/>
+        <label id="icon" for="name"><i class="icon-user"></i></label>
+        <input type="password" name="password" placeholder="Password" #password="ngModel" ngModel required minlength="4" /><br/>
+        By clicking Register, you agree on our <a href="#">terms and condition</a>.<br/>
+        <div class="text-center">
+            <button [disabled]="!loginForm.valid" class="btn btn-primary">LogIn</button><br/><br/>
+            New to ShopMe?&nbsp;
+            <a [routerLink]="[ '/', 'register' ]" routerLinkActive="active">Create an account</a>
+        </div>
+    </form>
+
+</div>

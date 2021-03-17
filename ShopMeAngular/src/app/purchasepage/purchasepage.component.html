@@ -1,0 +1,29 @@
+<div class="container" align="center">
+
+    <body>
+      <h1>Your order payment can be done using PayPal</h1>
+  
+      <div class="mt-2" *ngIf="showSuccess">
+        <div class="alert alert-success mt-2">
+          Yeah! Your transaction was successful.
+        </div>
+      </div>
+  
+      <div class="mt-2" *ngIf="showError">
+        <div class="alert alert-danger mt-2">
+          Oh no! Your <em>sandbox</em> transaction failed.
+        </div>
+      </div>
+  
+      <div class="mt-2" *ngIf="showCancel">
+        <div class="alert alert-info mt-2">
+          Your transaction was cancelled.
+        </div>
+      </div>
+      
+      <div class="mt-2">
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+      </div>
+  
+    </body>
+  </div>

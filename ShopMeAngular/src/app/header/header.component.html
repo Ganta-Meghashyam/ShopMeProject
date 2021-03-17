@@ -1,0 +1,66 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark text-white bg-primary  py-5 ">
+    <a class="navbar-brand" href="#"><strong>Shopme</strong> <span class="fa fa-shopping-cart"></span>
+        <br/>
+       
+        <p><small> <span>Your Shopping Partner</span></small></p>
+    </a> 
+    <!-- <img src="assets/Images/logo.jpg" alt="logo"> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+               
+                    <a class="nav-link" routerLink="home"><strong>Home</strong>
+                        <span class="sr-only">(current)</span>
+                    </a>
+               
+            </li>
+           
+
+            <li class="nav-item">
+               
+                    <a class="nav-link" routerLink="menshirts"> <strong>Products</strong></a>
+                    
+              
+            </li>
+            &nbsp; &nbsp; &nbsp;
+            <li class="nav-item">
+               
+                    <a class="nav-link" routerLink="myaccount"><strong>MyAccount</strong></a>
+                   
+            </li>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <li class="nav-item">
+            
+                    <a class="nav-link" routerLink="login"><strong>Login</strong></a>
+                    &nbsp; &nbsp; &nbsp;
+            </li>
+            <li class="nav-item">
+               
+                    <a class="nav-link" (click)="logout()"><strong>Logout</strong></a>
+                    &nbsp; &nbsp; &nbsp;
+            </li>
+            <li class="nav-item">
+                
+                    <a class="nav-link" routerLink="Cart"><strong>Cart</strong>
+                    <span class="fa fa-shopping-cart"></span></a>
+                   
+            </li>
+        </ul>
+        
+    </div>
+</nav>
+
+</html>
